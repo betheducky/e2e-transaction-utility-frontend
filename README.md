@@ -1,27 +1,32 @@
 # E2eTransactionUtilityFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+A minimal full stack application built with Angular and Java to demonstrate end-to-end CRUD operations, clean architecture, and client-server data flow.
 
-## Development server
+## Goal
+Demonstrate a simple, well structured full-stack application with clear separation between backend and frontend responsibilities.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tech Stack
+- Frontend: Angular (standalone components)
+- Backend: Java, Spring Boot
+- Persistence: In-memory / lightweight database
+- Communication: REST API (JSON)
 
-## Code scaffolding
+## Core Features
+- Create, read, update, and delete transactions
+- Filter transactions by type (income / expense)
+- Persistent storage via backend API
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## API Endpoints
+- `GET /transactions`
+- `POST /transactions`
+- `PUT /transactions/{id}`
+- `DELETE /transactions/{id}`
 
-## Build
+## Non-Goals
+- Authentication or user accounts
+- Charts, budgets, or analytics
+- Advanced validation or pagination
+- UI polish beyond basic usability
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Status
+In progress
