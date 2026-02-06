@@ -27,6 +27,11 @@ export class TransactionsPageComponent implements OnInit{
     });
   }
 
+  getVisibleTransactions() {
+    if(this.viewMode === 'ALL') return this.transactions;
+    return this.transactions.filter((transaction) => transaction.type === this.viewMode);
+  }
+
   onSave(transaction: Transaction) {
     if(transaction.id) {
       this.service.updateTransaction(transaction).subscribe(() => this.loadTransactions());
@@ -38,6 +43,13 @@ export class TransactionsPageComponent implements OnInit{
     this.editingTransaction = undefined;
   }
 
-  // onDelete, onEdit methods
+  onDelete(id: string) {
+    this.service.deleteTransaction(id).subscribe(() => this.loadTransactions());
+  }
 
+  onEdit(transaction: Transaction) {
+    this.editingTransaction = transaction;
+  }
+
+  // Wire up page components next
 }
