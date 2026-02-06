@@ -16,4 +16,16 @@ export class TransactionService {
     return this.http.get<Transaction[]>(this.baseUrl);
   }
 
+  createTransaction(transaction: Omit<Transaction, 'id' | 'createdAt'>): Observable<Transaction> {
+    return this.http.post<Transaction>(this.baseUrl, transaction);
+  }
+
+  updateTransaction(transaction: Transaction): Observable<Transaction> {
+    return this.http.put<Transaction>(`${this.baseUrl}/${transaction.id}`, transaction);
+  }
+
+  deleteTransaction(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
 }
