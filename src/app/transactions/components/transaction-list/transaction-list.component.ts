@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Transaction } from '../../models/transaction.model';
 
 @Component({
   selector: 'app-transaction-list',
@@ -8,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './transaction-list.component.scss'
 })
 export class TransactionListComponent {
+    @Input() transactions: Transaction[] = [];
+    @Output() edit = new EventEmitter<Transaction>();
+    @Output() delete = new EventEmitter<string>();
+
+    onEdit(tx: Transaction) {
+      this.edit.emit(tx);
+    }
+
+    onDelete(id: string){
+      this.delete.emit(id);
+    }
 
 }

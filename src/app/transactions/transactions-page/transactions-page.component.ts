@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Transaction } from '../models/transaction.model';
 import { TransactionService } from '../service/transaction.service';
+import { TransactionFormComponent } from '../components/transaction-form/transaction-form.component';
+import { TransactionListComponent } from '../components/transaction-list/transaction-list.component';
 
 
 @Component({
   selector: 'app-transactions-page',
   standalone: true,
-  imports: [],
+  imports: [TransactionFormComponent, TransactionListComponent],
   templateUrl: './transactions-page.component.html',
   styleUrl: './transactions-page.component.scss'
 })
@@ -51,5 +53,5 @@ export class TransactionsPageComponent implements OnInit{
     this.editingTransaction = transaction;
   }
 
-  // Wire up page components next
+
 }

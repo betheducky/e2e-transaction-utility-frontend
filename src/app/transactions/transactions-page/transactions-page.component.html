@@ -1,0 +1,19 @@
+<h1>Transaction Tracker</h1>
+
+<div class="page__filter">
+    <button (click)="viewMode = 'ALL'">All</button>
+    <button (click)="viewMode ='INCOME'">Income</button>
+    <button (click)="viewMode ='EXPENSE'">Expense</button>
+</div>
+
+<app-transaction-form
+[transaction]="editingTransaction"
+(save)="onSave($event)"
+(cancel)="editingTransaction = undefined"
+></app-transaction-form>
+
+<app-transaction-list 
+[transactions]="getVisibleTransactions()"
+(edit)="onEdit($event)"
+(delete)="onDelete($event)"
+></app-transaction-list>

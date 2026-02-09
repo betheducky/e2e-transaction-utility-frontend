@@ -1,1 +1,37 @@
-<p>transaction-list works!</p>
+<h2>Transactions</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+        @if(transactions.length < 1){
+            <tr>
+                <td>No transactions created yet!</td>
+            </tr>
+        } @else{
+            @for(tx of transactions; track transactions) {
+            <tr>
+                <td>{{tx.description}}</td>
+                <td>{{tx.amount}}</td>
+                <td>{{tx.type}}</td>
+                <td>{{tx.createdAt}}</td>
+                <td>{{tx.updatedAt}}</td>
+                <td>
+                    <button (click)="onEdit(tx)">Edit</button>
+                    <button (click)="onDelete(tx.id)">Delete</button>
+                </td>
+            </tr>
+        }
+        }
+    </tbody>
+    
+</table>

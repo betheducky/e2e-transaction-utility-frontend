@@ -1,1 +1,18 @@
-<p>transaction-form works!</p>
+<h2>{{ transaction ? 'Edit Transaction' : 'New Transaction'}}</h2>
+
+<form (ngSubmit)="onSubmit()" #transactionForm="ngForm">
+    <input type="text" name="description" palceholder="Description" [(ngModel)]="formData.description" required>
+    <input type="number" name="amount" placeholder="Amount" [(ngModel)]="formData.amount" required>
+
+    <select name="type" [(ngModel)]="formData.type">
+        @for(type of types; track types){
+            <option value="{{ type }}">{{ type }}</option>
+        }
+    </select>
+
+    <button type="submit"> {{transaction ? 'Update' : 'Add'}}</button>
+
+    @if(transaction) {
+        <button type="button" (click)="onCancel()">Cancel</button>
+    }
+</form>
