@@ -40,8 +40,9 @@ export class TransactionFormComponent {
     }
   }
 
-  onSubmit() {
+  onSubmit(form: any) {
     this.save.emit(this.formData);
+    form.resetForm();
   }
 
   onCancel() {

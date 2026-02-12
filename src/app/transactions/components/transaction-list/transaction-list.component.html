@@ -6,8 +6,9 @@
             <th>Description</th>
             <th>Amount</th>
             <th>Type</th>
-            <th>Date</th>
-            <th></th>
+            <th>Created</th>
+            <th>Updated</th>
+            <th>Actions</th>
         </tr>
     </thead>
 
@@ -15,7 +16,15 @@
         
         @if(transactions.length < 1){
             <tr>
-                <td>No transactions created yet!</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>
+                    <button>-</button>
+                    <button>-</button>
+                </td>
             </tr>
         } @else{
             @for(tx of transactions; track transactions) {

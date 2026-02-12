@@ -5,15 +5,18 @@
     <button (click)="viewMode ='INCOME'">Income</button>
     <button (click)="viewMode ='EXPENSE'">Expense</button>
 </div>
+<div class="page__container">
+    <app-transaction-form
+    [transaction]="editingTransaction"
+    (save)="onSave($event)"
+    (cancel)="editingTransaction = undefined"
+    ></app-transaction-form>
+</div>
 
-<app-transaction-form
-[transaction]="editingTransaction"
-(save)="onSave($event)"
-(cancel)="editingTransaction = undefined"
-></app-transaction-form>
-
-<app-transaction-list 
-[transactions]="getVisibleTransactions()"
-(edit)="onEdit($event)"
-(delete)="onDelete($event)"
-></app-transaction-list>
+<div class="page__container">
+    <app-transaction-list 
+    [transactions]="getVisibleTransactions()"
+    (edit)="onEdit($event)"
+    (delete)="onDelete($event)"
+    ></app-transaction-list>
+</div>
