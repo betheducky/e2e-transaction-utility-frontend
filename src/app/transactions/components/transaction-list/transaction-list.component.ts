@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Transaction } from '../../models/transaction.model';
+import { NgClass } from "../../../../../node_modules/@angular/common/index";
 
 @Component({
   selector: 'app-transaction-list',
@@ -9,6 +10,7 @@ import { Transaction } from '../../models/transaction.model';
   styleUrl: './transaction-list.component.scss'
 })
 export class TransactionListComponent {
+    @Input() selected: Transaction | undefined = undefined;
     @Input() transactions: Transaction[] = [];
     @Output() edit = new EventEmitter<Transaction>();
     @Output() delete = new EventEmitter<string>();

@@ -1,6 +1,7 @@
 <h1>Transaction Tracker</h1>
 
 <div class="page__filter">
+    <h3>Show:</h3>
     <button (click)="viewMode = 'ALL'">All</button>
     <button (click)="viewMode ='INCOME'">Income</button>
     <button (click)="viewMode ='EXPENSE'">Expense</button>
@@ -15,6 +16,7 @@
 
 <div class="page__container">
     <app-transaction-list 
+    [selected]="editingTransaction"
     [transactions]="getVisibleTransactions()"
     (edit)="onEdit($event)"
     (delete)="onDelete($event)"

@@ -14,7 +14,8 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: .75rem;
+    align-items: center;
+    gap: .25rem;
     margin-bottom: 2rem;
 }
 
@@ -32,6 +33,10 @@ body {
 
 .input--wide {
     width: 40%;
+}
+
+.transaction--editing {
+  background-color: #ffc2b671;
 }
 
 h2 {
@@ -56,6 +61,11 @@ h1, th, td {
   text-align: center;
 }
 
+th {
+  background-color: #ebebeb;
+}
+
 th, td {
     max-width: 5rem;
+    padding: 1rem 0;
 }

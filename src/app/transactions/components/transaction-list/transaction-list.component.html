@@ -28,7 +28,7 @@
             </tr>
         } @else{
             @for(tx of transactions; track transactions) {
-            <tr>
+            <tr [class.transaction--editing]="tx === selected">
                 <td>{{tx.description}}</td>
                 <td>{{tx.amount}}</td>
                 <td>{{tx.type}}</td>
