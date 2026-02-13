@@ -45,8 +45,7 @@ Demonstrate a simple, well structured full-stack application with clear separati
 ![List](https://github.com/user-attachments/assets/d69b958b-aebf-4257-bd66-8f492fb9f4de)
 
 ### Edit Transaction
-![Edit](<img width="1680" height="1050" alt="edit_transaction" src="https://github.com/user-attachments/assets/cd7604ca-0a17-47de-905f-018341725edd" />
-)
+![Edit](https://github.com/user-attachments/assets/cd7604ca-0a17-47de-905f-018341725edd)
 
 ## Non-Goals
 - Authentication or user accounts
@@ -54,5 +53,4 @@ Demonstrate a simple, well structured full-stack application with clear separati
 - Advanced validation or pagination
 - UI polish beyond basic usability
 
-## Status
-In progress
+
