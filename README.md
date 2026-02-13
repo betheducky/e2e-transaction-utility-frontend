@@ -11,10 +11,14 @@ Demonstrate a simple, well structured full-stack application with clear separati
 - Persistence: In-memory / lightweight database
 - Communication: REST API (JSON)
 
+---
+
 ## Core Features
 - Create, read, update, and delete transactions
 - Filter transactions by type (income / expense)
 - Persistent storage via backend API
+
+---
 
 ## Architectural Overview
 
@@ -24,17 +28,13 @@ Demonstrate a simple, well structured full-stack application with clear separati
 - Dedicated service later for HTTP communication
 - TypeScrupt models mirroring backend DTOs
 
-###Backend (Java)
+### Backend (Java)
 - REST controllers handling HTTP requests
 - Service layer containing business logic
 - Repository layer for persistence
 - Global CORS config for frontend integration
 
-## API Endpoints
-- `GET /transactions`
-- `POST /transactions`
-- `PUT /transactions/{id}`
-- `DELETE /transactions/{id}`
+---
 
 # Screenshots
 
@@ -47,10 +47,63 @@ Demonstrate a simple, well structured full-stack application with clear separati
 ### Edit Transaction
 ![Edit](https://github.com/user-attachments/assets/cd7604ca-0a17-47de-905f-018341725edd)
 
+---
+
+## API Endpoints
+- `GET /transactions`
+- `POST /transactions`
+- `PUT /transactions/{id}`
+- `DELETE /transactions/{id}`
+
+---
+
+## Local Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/betheducky/e2e-transaction-utility-frontend.git
+cd e2e-transaction-utility-frontend
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Start the development server
+```bash
+ng serve
+```
+
+Navigate to `http://localhost:4200/` or your specified local development server URL. The application will automatically reload if you change any of the source files.
+
+⚠️ Note:
+The Angular app expects the Java API to be running at:
+http://localhost:8080/api
+
+Make sure the [backend server](https://github.com/betheducky/e2e-transaction-utility-backend/blob/main/README.md#local-setup) is started before running the frontend.
+
+---
+
+## Key Concepts Demonstrated
+
+- Designing and consuming a REST API
+- Handling CORS between frontend and backend
+- Angular service layer and component architecture
+- End-to-end CRUD data flow
+- Form handling & event-driven UI communication
+
 ## Non-Goals
+
 - Authentication or user accounts
 - Charts, budgets, or analytics
 - Advanced validation or pagination
 - UI polish beyond basic usability
+
+---
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 
