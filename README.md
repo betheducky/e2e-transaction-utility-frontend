@@ -16,11 +16,30 @@ Demonstrate a simple, well structured full-stack application with clear separati
 - Filter transactions by type (income / expense)
 - Persistent storage via backend API
 
+## Architectural Overview
+
+### Frontend (Angular)
+- Presentational components for UI rendering
+- Container component for state and orchestration
+- Dedicated service later for HTTP communication
+- TypeScrupt models mirroring backend DTOs
+
+###Backend (Java)
+- REST controllers handling HTTP requests
+- Service layer containing business logic
+- Repository layer for persistence
+- Global CORS config for frontend integration
+
 ## API Endpoints
 - `GET /transactions`
 - `POST /transactions`
 - `PUT /transactions/{id}`
 - `DELETE /transactions/{id}`
+
+# Screenshots
+
+### Create Transaction
+![Create](https://github.com/user-attachments/assets/20fe0b81-3d02-4941-acac-8e713f6ece1c)
 
 ## Non-Goals
 - Authentication or user accounts
